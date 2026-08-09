@@ -1,0 +1,125 @@
+---- Minecraft Crash Report ----
+// You're mean.
+
+Time: 2026-08-09 18:36:02
+Description: Exception in server tick loop
+
+java.util.ConcurrentModificationException: null
+	at java.util.HashMap$HashIterator.nextNode(HashMap.java:1597) ~[?:?] {}
+	at java.util.HashMap$KeyIterator.next(HashMap.java:1620) ~[?:?] {}
+	at java.lang.Iterable.forEach(Iterable.java:74) ~[?:?] {re:mixin}
+	at net.minecraft.server.level.DistanceManager.m_140805_(DistanceManager.java:119) ~[server-1.20.1-20230612.114412-srg.jar%23171!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:valkyrienskies-common.mixins.json:accessors.server.level.DistanceManagerAccessor,pl:mixin:A}
+	at net.minecraft.server.level.ServerChunkCache.m_8489_(ServerChunkCache.java:273) ~[server-1.20.1-20230612.114412-srg.jar%23171!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:valkyrienskies-common.mixins.json:accessors.server.level.ServerChunkCacheAccessor,pl:mixin:APP:valkyrienskies-common.mixins.json:world.chunk.MixinServerChunkCache,pl:mixin:A}
+	at net.minecraft.server.level.ServerChunkCache$MainThreadExecutor.m_7245_(ServerChunkCache.java:545) ~[server-1.20.1-20230612.114412-srg.jar%23171!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerChunkCache.m_8466_(ServerChunkCache.java:269) ~[server-1.20.1-20230612.114412-srg.jar%23171!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:valkyrienskies-common.mixins.json:accessors.server.level.ServerChunkCacheAccessor,pl:mixin:APP:valkyrienskies-common.mixins.json:world.chunk.MixinServerChunkCache,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_129961_(MinecraftServer.java:758) ~[server-1.20.1-20230612.114412-srg.jar%23171!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_7245_(MinecraftServer.java:747) ~[server-1.20.1-20230612.114412-srg.jar%23171!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.util.thread.BlockableEventLoop.m_18701_(BlockableEventLoop.java:139) ~[server-1.20.1-20230612.114412-srg.jar%23171!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.m_130012_(MinecraftServer.java:733) ~[server-1.20.1-20230612.114412-srg.jar%23171!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:665) ~[server-1.20.1-20230612.114412-srg.jar%23171!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_206580_(MinecraftServer.java:251) ~[server-1.20.1-20230612.114412-srg.jar%23171!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.8.0-1052-azure
+	Java Version: 17.0.19, Ubuntu
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Ubuntu
+	Memory: 1298597800 bytes (1238 MiB) / 6895435776 bytes (6576 MiB) up to 17179869184 bytes (16384 MiB)
+	CPUs: 4
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD EPYC 9V74 80-Core Processor
+	Identifier: AuthenticAMD Family 25 Model 17 Stepping 1
+	Microarchitecture: Zen 3
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 7997.93
+	Virtual memory used (MB): 11795.33
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 2 total; -Xms2G -Xmx16G
+	Server Running: true
+	Player Count: 2 / 20; [ServerPlayer['ratto67'/947, l='ServerLevel[halo]', x=-378.79, y=67.00, z=751.85], ServerPlayer['santivela3006'/1530, l='ServerLevel[halo]', x=-381.50, y=66.23, z=750.09]]
+	Data Packs: vanilla, mod:creatingspace, mod:easy_npc, mod:openpartiesandclaims (incompatible), mod:geckolib, mod:tacz, mod:dotf, mod:ritchiesprojectilelib (incompatible), mod:aaa_particles (incompatible), mod:fabridge, mod:mixinextras (incompatible), mod:cloth_config (incompatible), mod:forge, mod:horror_element_mod, mod:clockwork, mod:easy_npc_bundle, mod:kotlinforforge (incompatible), mod:flywheel, mod:ponder (incompatible), mod:simplebedrockmodel, mod:halo_mde, mod:lostcities, mod:create_radar, mod:create, mod:createbigcannons (incompatible), mod:architectury (incompatible), mod:easy_npc_config_ui, mod:vsclaims, mod:valkyrienskies (incompatible), mod:trackwork (incompatible), mod:crusty_chunks, create:dynamic_data, tacz_resources, mod:jei, mod:sophisticatedcore (incompatible), mod:controlling (incompatible), mod:sophisticatedbackpacks (incompatible), mod:jade (incompatible), mod:gravestone, mod:appleskin (incompatible), mod:fallingtree (incompatible), mod:searchables (incompatible), mod:supermartijn642corelib, mod:portablemobs (incompatible)
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Experimental
+	Is Modded: Definitely; Server brand changed to 'forge'
+	Type: Dedicated Server (map_server.txt)
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		kotlinforforge@4.12.0
+		javafml@null
+		lowcodefml@null
+	Mod List: 
+		creatingspace-1.20.1-1.7.13.jar                   |Creating Space                |creatingspace                 |1.20.1_1.7.13       |DONE      |Manifest: NOSIGNATURE
+		easy_npc-forge-1.20.1-7.6.0.jar                   |Easy NPC                      |easy_npc                      |7.6.0               |DONE      |Manifest: NOSIGNATURE
+		open-parties-and-claims-forge-1.20.1-0.29.2.jar   |Open Parties and Claims       |openpartiesandclaims          |0.29.2              |DONE      |Manifest: NOSIGNATURE
+		geckolib-forge-1.20.1-4.8.4.jar                   |GeckoLib 4                    |geckolib                      |4.8.4               |DONE      |Manifest: NOSIGNATURE
+		jei-1.20.1-forge-15.48.0.179.jar                  |Just Enough Items             |jei                           |15.48.0.179         |DONE      |Manifest: NOSIGNATURE
+		tacz-1.20.1-1.1.8-hotfix.jar                      |Timeless & Classics Guns: Zero|tacz                          |1.1.8-hotfix        |DONE      |Manifest: NOSIGNATURE
+		dotf-0.5.2-R-1.20.1.jar                           |Dawn of the Flood             |dotf                          |0.5.2-R-1.20.1      |DONE      |Manifest: NOSIGNATURE
+		sophisticatedcore-1.20.1-1.3.74.2217.jar          |Sophisticated Core            |sophisticatedcore             |1.3.74.2217         |DONE      |Manifest: NOSIGNATURE
+		ritchiesprojectilelib-2.1.1-mc.1.20.1-forge.jar   |Ritchie's Projectile Library  |ritchiesprojectilelib         |2.1.1               |DONE      |Manifest: NOSIGNATURE
+		Controlling-forge-1.20.1-12.0.2.jar               |Controlling                   |controlling                   |12.0.2              |DONE      |Manifest: NOSIGNATURE
+		aaa_particles-forge-1.20.1-2.2.3.jar              |AAA Particles                 |aaa_particles                 |2.2.3               |DONE      |Manifest: NOSIGNATURE
+		fabridge-0.0.4-R-1.20.1.jar                       |Fabridge                      |fabridge                      |0.0.4-R-1.20.1      |DONE      |Manifest: NOSIGNATURE
+		mixinextras-forge-0.4.1.jar                       |MixinExtras                   |mixinextras                   |0.4.1               |DONE      |Manifest: NOSIGNATURE
+		sophisticatedbackpacks-1.20.1-3.24.63.2044.jar    |Sophisticated Backpacks       |sophisticatedbackpacks        |3.24.63.2044        |DONE      |Manifest: NOSIGNATURE
+		cloth-config-forge-11.1.106.jar                   |Cloth Config v10 API          |cloth_config                  |11.1.106            |DONE      |Manifest: NOSIGNATURE
+		forge-1.20.1-47.4.10-universal.jar                |Forge                         |forge                         |47.4.10             |DONE      |Manifest: 84:ce:76:e8:45:35:e4:0e:63:86:df:47:59:80:0f:67:6c:c1:5f:6e:5f:4d:b3:54:47:1a:9f:7f:ed:5e:f2:90
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		horror_element_mod-1.6.3-forge-1.20.1.jar         |Horror Element Mod            |horror_element_mod            |1.6.3               |DONE      |Manifest: NOSIGNATURE
+		Jade-1.20.1-Forge-11.13.3.jar                     |Jade                          |jade                          |11.13.3+forge       |DONE      |Manifest: NOSIGNATURE
+		clockwork-1.20.1-1.0.1.jar                        |ClockworkLib                  |clockwork                     |1.19.2-1.0.1        |DONE      |Manifest: NOSIGNATURE
+		supermartijn642corelib-1.1.23a-forge-mc1.20.1.jar |SuperMartijn642's Core Lib    |supermartijn642corelib        |1.1.23+a            |DONE      |Manifest: NOSIGNATURE
+		easy_npc_bundle-forge-1.20.1-7.6.0.jar            |Easy NPC: Bundle              |easy_npc_bundle               |7.6.0               |DONE      |Manifest: NOSIGNATURE
+		portablemobs-1.2.0-forge-mc1.20.jar               |Portable Mobs                 |portablemobs                  |1.2.0               |DONE      |Manifest: NOSIGNATURE
+		kffmod-4.12.0.jar                                 |Kotlin For Forge              |kotlinforforge                |4.12.0              |DONE      |Manifest: NOSIGNATURE
+		flywheel-forge-1.20.1-1.0.5.jar                   |Flywheel                      |flywheel                      |1.0.5               |DONE      |Manifest: NOSIGNATURE
+		Ponder-Forge-1.20.1-1.0.91.jar                    |Ponder                        |ponder                        |1.0.91              |DONE      |Manifest: NOSIGNATURE
+		simplebedrockmodel-2.2.2-forge+mc1.20.1.jar       |SimpleBedrockModel            |simplebedrockmodel            |2.2.2-forge+mc1.20.1|DONE      |Manifest: NOSIGNATURE
+		gravestone-forge-1.20.1-1.0.35.jar                |Gravestone Mod                |gravestone                    |1.20.1-1.0.35       |DONE      |Manifest: NOSIGNATURE
+		Searchables-forge-1.20.1-1.0.3.jar                |Searchables                   |searchables                   |1.0.3               |DONE      |Manifest: NOSIGNATURE
+		Halo  MDE - MC 1.20.1 - 1.7.1 - Oopsie Daisy Fixes|Halo & Treqyo (MDE)           |halo_mde                      |1.7.1               |DONE      |Manifest: NOSIGNATURE
+		lostcities-1.20-7.4.13.jar                        |LostCities                    |lostcities                    |1.20-7.4.13         |DONE      |Manifest: NOSIGNATURE
+		create_radar-0.4.6+mc1.20.1.jar                   |Create: Radars                |create_radar                  |0.4.5               |DONE      |Manifest: NOSIGNATURE
+		create-1.20.1-6.0.8.jar                           |Create                        |create                        |6.0.8               |DONE      |Manifest: NOSIGNATURE
+		createbigcannons-5.11.4-mc.1.20.1-forge.jar       |Create Big Cannons            |createbigcannons              |5.11.4              |DONE      |Manifest: NOSIGNATURE
+		architectury-9.2.14-forge.jar                     |Architectury                  |architectury                  |9.2.14              |DONE      |Manifest: NOSIGNATURE
+		appleskin-forge-mc1.20.1-2.5.1.jar                |AppleSkin                     |appleskin                     |2.5.1+mc1.20.1      |DONE      |Manifest: NOSIGNATURE
+		easy_npc_config_ui-forge-1.20.1-7.6.0.jar         |Easy NPC: Config UI           |easy_npc_config_ui            |7.6.0               |DONE      |Manifest: NOSIGNATURE
+		vsclaims-0.0.1.jar                                |VS Claims                     |vsclaims                      |0.0.1               |DONE      |Manifest: NOSIGNATURE
+		FallingTree-1.20.1-4.3.4.jar                      |FallingTree                   |fallingtree                   |4.3.4               |DONE      |Manifest: 3c:8e:df:6c:df:a6:2a:9f:af:64:ea:04:9a:cf:65:92:3b:54:93:0e:96:50:b4:52:e1:13:42:18:2b:ae:40:29
+		valkyrienskies-120-2.4.11.jar                     |Valkyrien Skies 2             |valkyrienskies                |2.4.11              |DONE      |Manifest: NOSIGNATURE
+		trackwork-1.20.1-1.2.3.jar                        |Trackwork Mod                 |trackwork                     |1.2.3               |DONE      |Manifest: NOSIGNATURE
+		Warium 1.3.0.jar                                  |Warium                        |crusty_chunks                 |1.3.0               |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 5f68b4b1-2e7d-4953-9a77-5b6d1c001c3f
+	FML: 47.4
+	Forge: net.minecraftforge:47.4.10
